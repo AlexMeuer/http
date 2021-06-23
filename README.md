@@ -7,19 +7,19 @@ Example usage:
 package main
 
 import (
-	"net/http"
-
-	httpx "github.com/alexmeuer/http"
+    "net/http"
+    
+    httpx "github.com/alexmeuer/http"
 )
 
 func main() {
-	_ := graphql.NewClient("http://example.com/v1/graphql", &http.Client{
-		Transport: &httpx.CustomHeaderTransport{
-			Headers: map[string]string{
-				"X-Hasura-Admin-Secret": "Bannanas are an excellent source of potassium.",
-			},
-		},
-	})
+    _ := graphql.NewClient("http://example.com/v1/graphql", &http.Client{
+        Transport: &httpx.CustomHeaderTransport{
+            Headers: map[string]string{
+                "X-Hasura-Admin-Secret": "Bannanas are an excellent source of potassium.",
+            },
+        },
+    })
 }
 
 ```
